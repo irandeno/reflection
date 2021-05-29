@@ -4,6 +4,15 @@
 
 > This module is a extended version of [@abraham/reflection](https://github.com/abraham/reflection).
 
+## Usage :
+
+```typescript
+import "https://deno.land/x/reflection/mod.ts"; // extend Reflect Object
+const target = {};
+Reflect.defineMetadata("key", "value", target);
+Reflect.getMetadata("key", target); // Result => "value"
+```
+
 ## Extended Methods :
 
 - `Reflect.getOwnMetadataKeys`
@@ -24,7 +33,9 @@ console.log(Reflect.getOwnMetadataKeys(target));
 console.log(Reflect.getOwnMetadataKeys(target, "property"));
 // Result => ["firstPropKey", "secondPropKey" ]
 ```
+
 - `Reflect.getMetaDataKey`
+
 ```typescript
 class Parent {}
 class Child extends Parent {}
